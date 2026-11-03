@@ -1,0 +1,24 @@
+name: Terminal server
+on:
+  push:
+    paths: ['terminal/**', '.github/workflows/terminal.yml']
+  pull_request:
+    paths: ['terminal/**', '.github/workflows/terminal.yml']
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    defaults:
+      run:
+        working-directory: terminal
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: terminal/package-lock.json
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npm test

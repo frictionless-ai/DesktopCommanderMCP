@@ -1,4 +1,10 @@
 # Desktop Commander MCP
+
+This fork includes a **[lightweight terminal-only server](terminal/README.md)**:
+four MCP tools, local stdio, no application command or sudo filtering, and execution
+with the host account's existing permissions. Install from `terminal/` using its
+instructions. The documentation below describes the original full desktop server.
+
 ### Search, update, manage files and run terminal commands with AI
 
 [![npm downloads](https://img.shields.io/npm/dw/@wonderwhy-er/desktop-commander)](https://www.npmjs.com/package/@wonderwhy-er/desktop-commander)
